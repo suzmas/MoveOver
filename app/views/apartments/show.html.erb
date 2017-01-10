@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @apartment.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @apartment.longitude %>
+</p>
+
+<p>
+  <strong>Streetno:</strong>
+  <%= @apartment.streetno %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @apartment.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @apartment.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @apartment.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @apartment.zip %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @apartment.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @apartment.phone %>
+</p>
+
+<p>
+  <strong>Contacthrs:</strong>
+  <%= @apartment.contacthrs %>
+</p>
+
+<%= link_to 'Edit', edit_apartment_path(@apartment) %> |
+<%= link_to 'Back', apartments_path %>
