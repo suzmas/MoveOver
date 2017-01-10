@@ -11,8 +11,7 @@ function placeMakers(dataFromServer, markers) {
 function showLocations(dataFromServer) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      alert(position);
-      dataFromServer[dataFromServer.length] = {
+        dataFromServer[dataFromServer.length] = {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
         infowindow: "You!"
@@ -32,10 +31,10 @@ function createGmap(dataFromServer) {
     internal: {id: 'apartment_map'}
   },
   function() {
+    showLocations(dataFromServer);
     markers = handler.addMarkers(dataFromServer);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    handler.getMap().setZoom(12)
   });
 };
 
