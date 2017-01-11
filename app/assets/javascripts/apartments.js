@@ -73,9 +73,15 @@ function loadAndCreateGmap() {
 
 function loadAndCreateGmaps() {
   if ($("#apartments_map").length > 0) {
+    var myurl = "/apartments/map_locations";
+    if ($("#search").val()) {
+        myurl += "?search=" + $("#search").val();
+    };
+
+
     $.ajax({
       dataType: 'json',
-      url: '/apartments/map_locations',
+      url: myurl,
       method: 'GET',
       success: function(dataFromServer) {
         createGmaps(dataFromServer)

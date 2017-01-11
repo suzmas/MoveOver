@@ -27,6 +27,10 @@ class ApartmentsController < ApplicationController
 
   def map_locations
     @apartments = Apartment.all
+    if params[:search]
+      @apartments = Apartment.search(params[:search])
+    end
+
     @hash = Gmaps4rails.build_markers(@apartments) do |apartment,marker|
       marker.lat(apartment.latitude)
       marker.lng(apartment.longitude)
