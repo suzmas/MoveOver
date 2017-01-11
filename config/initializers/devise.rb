@@ -43,6 +43,7 @@ Devise.setup do |config|
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
 
+  config.omniauth :twitter, "sdlO6zkrF2AjjlLfuBHCbYnWc", "3Wy13LYS9cU2YG4voXNE0gyul5jUpvDvygOhpLi2SXHrTthqod"
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
