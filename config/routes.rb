@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :apartments do
     get 'map_location'
     get :map_locations, on: :collection
