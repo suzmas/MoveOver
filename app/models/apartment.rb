@@ -8,4 +8,5 @@ class Apartment < ApplicationRecord
   def address
     streetno.to_s + ' ' + street.to_s + ', ' + city.to_s + ', ' + state.to_s + ', ' + zip.to_s
   end
+
 end
