@@ -44,6 +44,9 @@ Devise.setup do |config|
   # config.request_keys = []
 
   config.omniauth :twitter, "sdlO6zkrF2AjjlLfuBHCbYnWc", "3Wy13LYS9cU2YG4voXNE0gyul5jUpvDvygOhpLi2SXHrTthqod"
+
+  config.omniauth :facebook, "343253372728368
+", "5dc80161d46997f31cdef37e311bca02"
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
