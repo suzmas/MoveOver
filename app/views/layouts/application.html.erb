@@ -19,6 +19,9 @@
     <% if user_signed_in? %>
     <p>
       <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+      <% if !current_user.nil? %>
+        <%= current_user.email + ' (' + current_user.roles.pluck(:name).join(",") + ')' %>
+      <% end %>
     </p>
     <% else %>
     <p class="login">
@@ -31,6 +34,9 @@
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+
+
     <%= yield %>
   </body>
 </html>

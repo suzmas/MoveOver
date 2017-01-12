@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  rolify
+  after_create :assign_role
   has_many :apartments
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,6 +12,10 @@ class User < ApplicationRecord
       user.email = auth.uid + "@twitter.com"
       user.password = Devise.friendly_token[0,20]
     end
+  end
+
+  def assign_role
+    add_role(:poster)
   end
 
 end
