@@ -1,2 +1,50 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+<h1>Admin</h1>
+
+<h2>Users</h2>
+<table>
+  <thead>
+    <thead>
+      <tr>
+        <th>Email</th><th>Role</th>
+      </tr>
+    </thead>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.roles.first.name %></td>
+      <td>
+        <%= form_tag("/admin/" + user.id.to_s + "?role=admin", method: :PUT) do %>
+          <input type="submit" value="Make Admin"/>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h2>Apartments</h2>
+<table>
+  <thead>
+    <thead>
+      <tr>
+        <th>Address</th><th>User</th>
+      </tr>
+    </thead>
+  </thead>
+  <tbody>
+  <% @apartments.each do |apartment| %>
+    <tr>
+      <td><%= apartment.address %></td>
+      <td><%= apartment.user.email %></td>
+      <td>
+        <%= link_to 'Edit', edit_apartment_path(apartment) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
