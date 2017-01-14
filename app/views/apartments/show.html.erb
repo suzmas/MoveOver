@@ -1,63 +1,65 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @apartment.latitude %>
-</p>
+<div class="container">
+  <p>
+    <strong>Latitude:</strong>
+    <%= @apartment.latitude %>
+  </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @apartment.longitude %>
-</p>
+  <p>
+    <strong>Longitude:</strong>
+    <%= @apartment.longitude %>
+  </p>
 
-<p>
-  <strong>Streetno:</strong>
-  <%= @apartment.streetno %>
-</p>
+  <p>
+    <strong>Streetno:</strong>
+    <%= @apartment.streetno %>
+  </p>
 
-<p>
-  <strong>Street:</strong>
-  <%= @apartment.street %>
-</p>
+  <p>
+    <strong>Street:</strong>
+    <%= @apartment.street %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @apartment.city %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @apartment.city %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @apartment.state %>
-</p>
+  <p>
+    <strong>State:</strong>
+    <%= @apartment.state %>
+  </p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @apartment.zip %>
-</p>
+  <p>
+    <strong>Zip:</strong>
+    <%= @apartment.zip %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @apartment.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @apartment.name %>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @apartment.phone %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @apartment.phone %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @apartment.user.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @apartment.user.email %>
+  </p>
 
-<p>
-  <strong>Contacthrs:</strong>
-  <%= @apartment.contacthrs %>
-</p>
+  <p>
+    <strong>Contacthrs:</strong>
+    <%= @apartment.contacthrs %>
+  </p>
 
-<p>
-  <%= link_to image_tag(@apartment.image.url(:large)), @apartment.image.url %>
-</p>
+  <p>
+    <%= link_to image_tag(@apartment.image.url(:large)), @apartment.image.url %>
+  </p>
+</div>
 
 <div id="apartment_map" data-apartment-id="<%=@apartment.id%>">
 </div>

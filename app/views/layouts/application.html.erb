@@ -16,21 +16,23 @@
   </head>
 
   <body>
+    <ul class="nav nav-tabs">
     <% if user_signed_in? %>
-    <p>
-      <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
       <% if !current_user.nil? %>
-        <%= current_user.email + ' (' + current_user.roles.pluck(:name).join(",") + ')' %>
+        <% if !(current_user.email.include? "@twitter.com") %>
+          <li><a href="/"><%= current_user.email + ' (' + current_user.roles.pluck(:name).join(",") + ')' %></a></li>
+        <% else %>
+          <li><a href="/"><%= 'Twitter User (' + current_user.roles.pluck(:name).join(",") + ')' %></a></li>
+        <% end %>
       <% end %>
-    </p>
+      <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
     <% else %>
-    <p class="login">
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Sign In With Twitter", user_twitter_omniauth_authorize_path %>
-      <%= link_to "Sign In With Facebook", user_facebook_omniauth_authorize_path %>
-    </p>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+        <li><%= link_to "Sign In With Twitter", user_twitter_omniauth_authorize_path %></li>
+        <li><%= link_to "Sign In With Facebook", user_facebook_omniauth_authorize_path %></li>
     <% end %>
+    </ul>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
